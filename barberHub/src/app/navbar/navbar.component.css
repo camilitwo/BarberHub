@@ -60,3 +60,51 @@
   color: #c0392b;
   font-weight: bold;
 }
+
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%; /* Esto asegura que el menú se despliegue justo debajo del navbar */
+    left: 0;
+    background-color: #333;
+    padding: 1rem;
+    transition: max-height 0.3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+  }
+  .nav-menu.active {
+    display: flex;
+    max-height: 300px; /* Ajusta esto según la cantidad de elementos en el menú */
+  }
+  .nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .hamburger {
+    width: 1.5rem;
+    height: 2px;
+    background: white;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+  .hamburger::before, .hamburger::after {
+    content: '';
+    width: 1.5rem;
+    height: 2px;
+    background: white;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+  }
+  .hamburger::before {
+    top: -0.5rem;
+  }
+  .hamburger::after {
+    top: 0.5rem;
+  }
+}
