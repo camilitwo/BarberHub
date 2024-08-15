@@ -36,9 +36,7 @@ export class NavbarComponent implements OnInit {
       hamburger.classList.remove('active');
     }
   }
-
   isBrowser: boolean;
-
   constructor(@Inject(PLATFORM_ID) private platformId: any, private renderer: Renderer2, private el: ElementRef) {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
