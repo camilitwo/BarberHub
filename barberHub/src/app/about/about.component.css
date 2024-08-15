@@ -1,12 +1,15 @@
 .about-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 50px 0;
+  padding: 50px 20px; /* Añadido padding para pantallas pequeñas */
+  text-align: center; /* Centra el texto en pantallas pequeñas */
 }
 
 .about-image {
   position: relative;
-  width: 50%;
+  width: 100%; /* Ancho completo en pantallas pequeñas */
+  margin-bottom: 20px; /* Espacio entre la imagen y el contenido en pantallas pequeñas */
 }
 
 .about-image .image {
@@ -17,30 +20,32 @@
 
 .opening-hour {
   position: absolute;
-  bottom: 300px;
-  left: 250px;
+  bottom: 20px; /* Ajusta la posición en pantallas pequeñas */
+  left: 50%;
+  transform: translateX(-50%); /* Centra el cuadro de horario */
   background-color: white;
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  width: 80%; /* Ajusta el tamaño en pantallas pequeñas */
 }
 
 .opening-hour h3 {
   margin: 0;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   color: #705d34; /* color dorado */
 }
 
 .opening-hour p {
   margin: 5px 0;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .about-content {
-  width: 50%;
-  padding-left: 50px;
+  width: 100%; /* Ancho completo en pantallas pequeñas */
+  padding-left: 0; /* Elimina padding lateral en pantallas pequeñas */
 }
 
 .about-content h2 {
@@ -51,14 +56,14 @@
 }
 
 .about-content h3 {
-  font-size: 36px;
+  font-size: 28px; /* Tamaño de fuente ajustado para pantallas pequeñas */
   font-weight: bold;
   color: #333;
   margin-bottom: 20px;
 }
 
 .about-content p {
-  font-size: 18px;
+  font-size: 16px; /* Tamaño de fuente ajustado para pantallas pequeñas */
   line-height: 1.6;
   color: #777;
   margin-bottom: 30px;
@@ -76,4 +81,21 @@
 
 .learn-more-btn:hover {
   background-color: #a58e52;
+}
+
+@media (min-width: 768px) {
+  .about-container {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .about-image {
+    width: 50%;
+    margin-bottom: 0;
+  }
+
+  .about-content {
+    width: 50%;
+    padding-left: 50px;
+  }
 }
